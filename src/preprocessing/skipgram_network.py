@@ -18,6 +18,7 @@ for txt in txts:
         text = f.read().split()
     text = [wd for wd in text if wd not in stopwords]
     skips = list(skipgrams(text, 2, 5))
+    skips = [sorted(t) for t in skips]
     skips = ['@'.join(t) for t in skips]
     counts.update(skips)
 
@@ -33,6 +34,7 @@ for skip, freq in counts.iteritems():
             if target not in G:
                 G.add_node(target)
             i += 1
+            print(f"we have {i} edges")
         except Exception as exc:
             print(exc)
             continue
