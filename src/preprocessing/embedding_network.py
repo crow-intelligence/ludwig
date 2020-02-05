@@ -1,6 +1,4 @@
-import operator
 import pickle
-from collections import Counter
 
 import networkx as nx
 import numpy as np
