@@ -27,12 +27,12 @@ sp_no = nx.shortest_simple_paths(G=G_embed, source="nő", target="okos")
 
 # chain decomposition
 ff_chain = nx.chain_decomposition(G=G_embed, root="férfi")
-ff_chain = [e for e in ff_chain if 30 > len(e) > 10]
+ff_chain = [e for e in ff_chain if 40 > len(e) > 10]
 fn = max([len(e) for e in ff_chain])
 fi = [len(e) for e in ff_chain].index(fn)
 
 no_chain = nx.chain_decomposition(G=G_embed, root="nő")
-no_chain = [e for e in no_chain if 30 > len(e) > 10]
+no_chain = [e for e in no_chain if 40 > len(e) > 10]
 nn = max([len(e) for e in no_chain])
 no = [len(e) for e in no_chain].index(nn)
 
