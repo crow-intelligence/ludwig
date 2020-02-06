@@ -21,3 +21,29 @@ print(pf, pn)
 pf = nx.shortest_path(G=G_embed, source="férfi", target="okos")
 pn = nx.shortest_path(G=G_embed, source="nő", target="okos")
 print(pf, pn)
+
+sp_ffi = nx.shortest_simple_paths(G=G_embed, source="férfi", target="okos")
+sp_no = nx.shortest_simple_paths(G=G_embed, source="nő", target="okos")
+
+# chain decomposition
+ff_chain = nx.chain_decomposition(G=G_embed, root="férfi")
+ff_chain = [e for e in ff_chain if 30 > len(e) > 10]
+fn = max([len(e) for e in ff_chain])
+fi = [len(e) for e in ff_chain].index(fn)
+
+no_chain = nx.chain_decomposition(G=G_embed, root="nő")
+no_chain = [e for e in no_chain if 30 > len(e) > 10]
+nn = max([len(e) for e in no_chain])
+no = [len(e) for e in no_chain].index(nn)
+
+ff_path = ff_chain[fi]
+no_path = no_chain[no]
+
+G = nx.Graph()
+for e in ff_path:
+    G.add_edge(e[0], e[1])
+
+for e in no_path:
+    G.add_edge(e[0], e[1])
+
+nx.write_graphml(G, "data/graphmls/metro1.graphml")
