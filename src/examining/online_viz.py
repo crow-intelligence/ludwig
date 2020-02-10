@@ -19,7 +19,7 @@ print(len(G_embed.nodes))
 
 pr = nx.pagerank(G_embed)
 sorted_pr = sorted(pr.items(), key=operator.itemgetter(1), reverse=True)
-sorted_pr = sorted_pr[:3000]
+sorted_pr = sorted_pr[:500]
 sorted_pr = [e[0] for e in sorted_pr]
 tobedeleted2 = [e for e in list(G_embed.nodes) if e not in sorted_pr]
 for node in tobedeleted2:
