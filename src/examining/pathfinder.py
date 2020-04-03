@@ -14,11 +14,11 @@ with open("data/vocabularies/embed_vocab.txt", "w") as f:
         f.write(wd + "\n")
 
 # path btw two nodes
-pf = nx.shortest_path(G=G_skip, source="férfi", target="okos")
+pf = nx.shortest_path(G=G_skip, source="nemzet", target="okos")
 pn = nx.shortest_path(G=G_skip, source="nő", target="okos")
 print(pf, pn)
 
-pf = nx.shortest_path(G=G_embed, source="férfi", target="okos")
+pf = nx.shortest_path(G=G_embed, source="nemzet", target="okos")
 pn = nx.shortest_path(G=G_embed, source="nő", target="okos")
 print(pf, pn)
 

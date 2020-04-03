@@ -1,6 +1,7 @@
 import pickle
 
 import numpy as np
+from sklearn.manifold import TSNE
 
 with open("data/langmods/seedonly.p", "rb") as f:
     vocab = pickle.load(f)
@@ -22,7 +23,7 @@ with open("data/clustering/vocab_clusters.tsv", "r") as f:
         wd, cluster = l.strip().split()
         wd_cluster[wd] = cluster
 
-from sklearn.manifold import TSNE
+
 X_embedded = TSNE(n_components=3)
 X_embedded.fit(m)
 

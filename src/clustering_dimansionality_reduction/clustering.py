@@ -17,7 +17,6 @@ for wd in tobedeleted:
     vocab.remove(wd)
 print(m.shape)
 
-clustering = AffinityPropagation().fit(m)
 kmeans = KMeans(n_clusters=15, random_state=0).fit(m)
 labels = list(kmeans.labels_)
 print(max(labels))
