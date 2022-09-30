@@ -4,7 +4,7 @@ black==19.10b0
 bounter==1.1.0
 Click==7.0
 decorator==4.4.1
-joblib==0.14.1
+joblib==1.2.0
 networkx==2.4
 nltk==3.4.5
 numpy==1.18.1
